@@ -5,7 +5,9 @@ import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
 import { routing } from './app.router';
-import {HomeComponent} from "./home/index";
+import {HomeComponent} from "./components/home/index";
+import {DatePickerModule} from "ng2-datepicker";
+import {PostService} from "./services/post.service";
 
 @NgModule({
   declarations: [
@@ -16,10 +18,12 @@ import {HomeComponent} from "./home/index";
     BrowserModule,
     FormsModule,
     HttpModule,
-    routing
+    routing,
+    DatePickerModule
 
   ],
   providers: [
+    PostService
   ],
   bootstrap: [
     AppComponent

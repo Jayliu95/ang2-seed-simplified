@@ -1,0 +1,91 @@
+<div class="container">
+
+  <form name="blogpost" class="well form-horizontal" action=" " method="post"  id="contact_form" (ngSubmit)="submitPost()">
+    <fieldset>
+
+      <!-- Form Name -->
+      <legend>Post Your Blog Here!</legend>
+
+      <!--  Select Author -->
+      <div class="form-group">
+        <label class="col-md-4 control-label">Author</label>
+        <div class="col-md-4 selectContainer">
+          <div class="input-group">
+            <span class="input-group-addon"><i class="glyphicon glyphicon-list"></i></span>
+            <select [(ngModel)]="selectedPost.author" name="author" class="form-control selectpicker" >
+              <option value=" " >Please select the author</option>
+              <option>Jayliu95</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+
+
+
+      <!-- Blog Type input -->
+      <div class="form-group">
+        <label class="col-md-4 control-label">Blog Type</label>
+        <div class="col-md-4 selectContainer">
+          <div class="input-group">
+            <span class="input-group-addon"><i class="glyphicon glyphicon-list"></i></span>
+            <select [(ngModel)]="selectedPost.type" name="type" class="form-control selectpicker" >
+              <option value=" " >Please select Blog Type</option>
+              <option>Advice</option>
+              <option>Educational</option>
+              <option>Rants</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+
+      <!-- Blog Title input -->
+      <div class="form-group">
+        <label class="col-md-4 control-label">Title</label>
+        <div class="col-md-4 inputGroupContainer">
+          <div class="input-group">
+            <span class="input-group-addon"><i class="glyphicon glyphicon-pencil"></i></span>
+            <textarea [(ngModel)]="selectedPost.title" class="form-control" name="blogTitle" placeholder="Blog Title"></textarea>
+          </div>
+        </div>
+      </div>
+
+      <!-- Blog Content input -->
+      <div class="form-group">
+        <label class="col-md-4 control-label">Project Description</label>
+        <div class="col-md-4 inputGroupContainer">
+          <div class="input-group">
+            <span class="input-group-addon"><i class="glyphicon glyphicon-pencil"></i></span>
+            <textarea [(ngModel)]="selectedPost.content" class="form-control" name="blogContent" placeholder="Project Description"></textarea>
+          </div>
+        </div>
+      </div>
+
+      <!-- Date Picker input-->
+      <div class="form-group">
+        <label class="col-md-4 control-label">Date</label>
+        <div class="col-md-4 inputGroupContainer">
+          <div class="input-group">
+            <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
+            <ng2-datepicker name ="date" class="form-control" [options]="options" [(ngModel)]="selectedPost.date"></ng2-datepicker>
+          </div>
+        </div>
+      </div>
+
+
+      <!-- Success message -->
+      <div class="alert alert-success" role="alert" id="success_message">Success <i class="glyphicon glyphicon-thumbs-up"></i> Thanks for contacting us, we will get back to you shortly.</div>
+
+      <!-- Button -->
+      <div class="form-group">
+        <label class="col-md-4 control-label"></label>
+        <div class="col-md-4">
+          <button type="submit" class="btn btn-warning" >Send <span class="glyphicon glyphicon-send"></span></button>
+        </div>
+      </div>
+
+    </fieldset>
+  </form>
+</div>
+<!-- /.container -->

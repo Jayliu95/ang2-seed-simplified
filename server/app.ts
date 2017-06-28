@@ -3,7 +3,9 @@ import * as compression from "compression";
 import * as express from "express";
 import * as path from "path";
 
+console.log(__dirname);
 
+var post = require('./controllers/post');
 
 const app: express.Application = express();
 
@@ -13,7 +15,8 @@ app.use(json());
 app.use(compression());
 app.use(urlencoded({ extended: true }));
 
-
+// api routes
+app.use('/api/v1/posts', post);
 
 if (app.get("env") === "production") {
 
